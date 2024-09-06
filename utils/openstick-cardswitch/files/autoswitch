@@ -1,0 +1,9 @@
+#!/bin/sh
+
+#auto switch scripts
+sed -i '/exit/d' /etc/rc.local
+echo "sh /etc/cardswitch/cardswitch.sh" >> /etc/rc.local
+echo "#Please put the card slot you want to switch to after cardswitch.sh,defalut is emepty" >> /etc/rc.local
+echo "exit 0" >> /etc/rc.local
+
+exit 0
