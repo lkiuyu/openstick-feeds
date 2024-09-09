@@ -28,7 +28,10 @@ endef
 
 define Package/$(PKG_NAME)/install 
 	$(INSTALL_DIR) $(1)/etc/uci-defaults
-	$(INSTALL_BIN) ./files/openstick_tweak $(1)/etc/uci-defaults
+	$(INSTALL_BIN) ./files/098_opkg_tweak $(1)/etc/uci-defaults
+
+	$(INSTALL_DIR) $(1)/etc/uci-defaults
+	$(INSTALL_BIN) ./files/099_openstick_tweak $(1)/etc/uci-defaults
 endef 
 
 $(eval $(call BuildPackage,$(PKG_NAME)))

@@ -1,0 +1,19 @@
+#!/bin/sh
+
+#opkg arch configuration
+echo "arch all 100" >> /etc/opkg.conf
+echo "arch aarch64_cortex-a53 200" >> /etc/opkg.conf
+echo "arch aarch64_generic 300" >> /etc/opkg.conf
+
+#default source replacement
+rm -rf /etc/opkg/distfeeds.conf
+touch /etc/opkg/distfeeds.conf
+chmod 755 /etc/opkg/distfeeds.conf
+echo "src/gz immortalwrt_core https://downloads.immortalwrt.org/snapshots/targets/armsr/armv8/packages" >> /etc/opkg/distfeeds.conf
+echo "src/gz immortalwrt_base https://downloads.immortalwrt.org/snapshots/packages/aarch64_cortex-a53/base" >> /etc/opkg/distfeeds.conf
+echo "src/gz immortalwrt_luci https://downloads.immortalwrt.org/snapshots/packages/aarch64_cortex-a53/luci" >> /etc/opkg/distfeeds.conf
+echo "src/gz immortalwrt_packages https://downloads.immortalwrt.org/snapshots/packages/aarch64_cortex-a53/packages" >> /etc/opkg/distfeeds.conf
+echo "src/gz immortalwrt_routing https://downloads.immortalwrt.org/snapshots/packages/aarch64_cortex-a53/routing" >> /etc/opkg/distfeeds.conf
+echo "src/gz immortalwrt_telephony https://downloads.immortalwrt.org/snapshots/packages/aarch64_cortex-a53/telephony" >> /etc/opkg/distfeeds.conf
+
+exit 0
