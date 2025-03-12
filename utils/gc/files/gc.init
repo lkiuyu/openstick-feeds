@@ -66,6 +66,10 @@ start_service() {
 }
 
 stop_service() {
+    adb=$(uci get gc.config.adb 2>/dev/null)
+    if [ $adb -eq 1 ]; then
+		/etc/init.d/adbd stop
+	fi
 	gc -c
 }
 
