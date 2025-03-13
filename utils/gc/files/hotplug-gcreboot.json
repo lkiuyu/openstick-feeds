@@ -1,0 +1,25 @@
+[
+	[
+		"case",
+		"ACTION",
+		{
+			"change": [
+				[
+					"if",
+					[
+						"and",
+						[ "has", "DEVPATH" ],
+						[ "eq", "DEVPATH", "/devices/platform/soc@0/200f000.spmi/spmi-0/0-00/200f000.spmi:pmic@0:extcon@1300/extcon/extcon0" ],
+						[ "has", "SUBSYSTEM" ],
+						[ "eq", "SUBSYSTEM", "extcon" ],
+						[ "has", "NAME" ],
+						[ "eq", "NAME", "200f000.spmi:pmic@0:extcon@1300" ],
+						[ "has", "STATE" ],
+						[ "regex", "STATE", "^USB=0" ]
+					],
+					[ "exec", "/sbin/hotplug-call","gcrestart" ]
+				]
+			]
+		}
+	]
+]
