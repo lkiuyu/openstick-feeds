@@ -35,6 +35,12 @@ define Package/gc/install
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/gc.init $(1)/etc/init.d/gc
 
+	$(INSTALL_DIR) $(1)/etc
+	$(INSTALL_BIN) ./files/hotplug-gcreboot.json $(1)/etc/hotplug-gcreboot.json
+
+	$(INSTALL_DIR) $(1)/etc/hotplug.d/gcrestart
+	$(INSTALL_BIN) ./files/restart_gc.sh $(1)/etc/hotplug.d/gcrestart/restart_gc.sh
+
 	$(INSTALL_DIR) $(1)/etc/config
 	$(INSTALL_BIN) ./files/gc.uci $(1)/etc/config/gc
 
