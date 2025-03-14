@@ -23,7 +23,7 @@ uci commit
 /etc/init.d/network restart
 
 # HACK : restart network to find modem after reboot
-echo '/etc/init.d/gc restart \n (sleep 25 && /etc/init.d/modemmanager restart) & \n ( procd -h /etc/hotplug-gcreboot.json> /dev/null ) & ' > /etc/rc.local
+echo -e '/etc/init.d/gc restart \n (sleep 25 && /etc/init.d/modemmanager restart) & \n ( procd -h /etc/hotplug-gcreboot.json> /dev/null ) & ' > /etc/rc.local
 # echo 'sleep 25 && /etc/init.d/network restart' > /etc/rc.local
 
 opkg remove openstick-tweaks
