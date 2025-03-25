@@ -29,46 +29,46 @@ endef
 
 define Build/Compile
 	mkdir -p $(PKG_BUILD_DIR)/dragonboard
-	mcopy -o -i $(PKG_BUILD_DIR)/dragonboard-modem.bin -p -m -v \
+	mcopy -o -n $(PKG_BUILD_DIR)/dragonboard-modem.bin -p -m -v \
 		::image/mba.mbn ::image/modem.* ::image/wcnss.* $(PKG_BUILD_DIR)/dragonboard
 	mkdir -p $(PKG_BUILD_DIR)/openstick-ufi001b
-	mcopy -o -i $(PKG_BUILD_DIR)/openstick-ufi001b-modem.bin -p -m -v \
+	mcopy -o -n $(PKG_BUILD_DIR)/openstick-ufi001b-modem.bin -p -m -v \
 		::image/mba.mbn ::image/modem.* ::image/wcnss.* $(PKG_BUILD_DIR)/openstick-ufi001b
 	mkdir -p $(PKG_BUILD_DIR)/openstick-ufi001c
-	mcopy -o -i $(PKG_BUILD_DIR)/openstick-ufi001c-modem.bin -p -m -v \
+	mcopy -o -n $(PKG_BUILD_DIR)/openstick-ufi001c-modem.bin -p -m -v \
 		::image/mba.mbn ::image/modem.* ::image/wcnss.* $(PKG_BUILD_DIR)/openstick-ufi001c
 	mkdir -p $(PKG_BUILD_DIR)/openstick-ufi003
-	mcopy -o -i $(PKG_BUILD_DIR)/openstick-ufi003-modem.bin -p -m -v \
+	mcopy -o -n $(PKG_BUILD_DIR)/openstick-ufi003-modem.bin -p -m -v \
 		::image/mba.mbn ::image/modem.* ::image/wcnss.* $(PKG_BUILD_DIR)/openstick-ufi003
 	mkdir -p $(PKG_BUILD_DIR)/openstick-ufi103s
-	mcopy -o -i $(PKG_BUILD_DIR)/openstick-ufi103s-modem.bin -p -m -v \
+	mcopy -o -n $(PKG_BUILD_DIR)/openstick-ufi103s-modem.bin -p -m -v \
 		::image/mba.mbn ::image/modem.* ::image/wcnss.* $(PKG_BUILD_DIR)/openstick-ufi103s
 	mkdir -p $(PKG_BUILD_DIR)/openstick-sp970
-	mcopy -o -i $(PKG_BUILD_DIR)/openstick-sp970-modem.bin -p -m -v \
+	mcopy -o -n $(PKG_BUILD_DIR)/openstick-sp970-modem.bin -p -m -v \
 		::image/mba.mbn ::image/modem.* ::image/wcnss.* $(PKG_BUILD_DIR)/openstick-sp970
 	mkdir -p $(PKG_BUILD_DIR)/openstick-uz801
-	mcopy -o -i $(PKG_BUILD_DIR)/openstick-uz801-modem.bin -p -m -v \
+	mcopy -o -n $(PKG_BUILD_DIR)/openstick-uz801-modem.bin -p -m -v \
 		::image/mba.mbn ::image/modem.* ::image/wcnss.* $(PKG_BUILD_DIR)/openstick-uz801
 	mkdir -p $(PKG_BUILD_DIR)/openstick-qrzl903
-	mcopy -o -i $(PKG_BUILD_DIR)/openstick-qrzl903-modem.bin -p -m -v \
+	mcopy -o -n $(PKG_BUILD_DIR)/openstick-qrzl903-modem.bin -p -m -v \
 		::image/mba.mbn ::image/modem.* ::image/wcnss.* $(PKG_BUILD_DIR)/openstick-qrzl903
 	mkdir -p $(PKG_BUILD_DIR)/openstick-w001
-	mcopy -o -i $(PKG_BUILD_DIR)/openstick-w001-modem.bin -p -m -v \
+	mcopy -o -n $(PKG_BUILD_DIR)/openstick-w001-modem.bin -p -m -v \
 		::image/mba.mbn ::image/modem.* ::image/wcnss.* $(PKG_BUILD_DIR)/openstick-w001
 	mkdir -p $(PKG_BUILD_DIR)/openstick-mf32
-	mcopy -o -i $(PKG_BUILD_DIR)/openstick-mf32-modem.bin -p -m -v \
+	mcopy -o -n $(PKG_BUILD_DIR)/openstick-mf32-modem.bin -p -m -v \
 		::image/mba.mbn ::image/modem.* ::image/wcnss.* $(PKG_BUILD_DIR)/openstick-mf32
 	mkdir -p $(PKG_BUILD_DIR)/openstick-mf601
-	mcopy -o -i $(PKG_BUILD_DIR)/openstick-mf601-modem.bin -p -m -v \
+	mcopy -o -n $(PKG_BUILD_DIR)/openstick-mf601-modem.bin -p -m -v \
 		::image/mba.mbn ::image/modem.* ::image/wcnss.* $(PKG_BUILD_DIR)/openstick-mf601
 	mkdir -p $(PKG_BUILD_DIR)/openstick-wf2
-	mcopy -o -i $(PKG_BUILD_DIR)/openstick-wf2-modem.bin -p -m -v \
+	mcopy -o -n $(PKG_BUILD_DIR)/openstick-wf2-modem.bin -p -m -v \
 		::image/mba.mbn ::image/modem.* ::image/wcnss.* $(PKG_BUILD_DIR)/openstick-wf2
 	mkdir -p $(PKG_BUILD_DIR)/wt88047
-	mcopy -o -i $(PKG_BUILD_DIR)/wt88047-modem.bin -p -m -v \
+	mcopy -o -n $(PKG_BUILD_DIR)/wt88047-modem.bin -p -m -v \
 		::image/mba.mbn ::image/modem.* ::image/wcnss.* $(PKG_BUILD_DIR)/wt88047
 	mkdir -p $(PKG_BUILD_DIR)/wt86047
-	mcopy -o -i $(PKG_BUILD_DIR)/wt86047-modem.bin -p -m -v \
+	mcopy -o -n $(PKG_BUILD_DIR)/wt86047-modem.bin -p -m -v \
 		::image/mba.mbn ::image/modem.* ::image/wcnss.* $(PKG_BUILD_DIR)/wt86047	
 endef
 
