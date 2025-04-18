@@ -26,6 +26,9 @@ start_service() {
 			mount -t configfs none /sys/kernel/config
 		fi
 		gc -c
+		if [ $ecm -eq 1 ]; then
+			gc -a ecm
+		fi
 		if [ $rndis -eq 1 ]; then
 			gc -a rndis
 		fi
@@ -34,9 +37,6 @@ start_service() {
 		fi
 		if [ $hid -eq 1 ]; then
 			gc -a hid
-		fi
-		if [ $ecm -eq 1 ]; then
-			gc -a ecm
 		fi
 		if [ $acm -eq 1 ]; then
 			gc -a acm
