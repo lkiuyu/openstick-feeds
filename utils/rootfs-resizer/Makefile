@@ -28,7 +28,7 @@ endef
 
 define Package/$(PKG_NAME)/install 
 	$(INSTALL_DIR) $(1)/etc/uci-defaults
-	$(INSTALL_BIN) ./files/rootfs_resizer $(1)/etc/uci-defaults
+	$(INSTALL_BIN) ./files/00_rootfs_resizer $(1)/etc/uci-defaults
 endef 
 
 $(eval $(call BuildPackage,$(PKG_NAME)))
