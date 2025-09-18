@@ -19,7 +19,9 @@ PKG_MIRROR_HASH:=783cbf7846675eeeea7f24758c996f0fd144fb1e166ce6686afd7f7d89aaa3c
 
 PKG_LICENSE:=BSD-3-Clause
 
+include $(INCLUDE_DIR)/nls.mk
 include $(INCLUDE_DIR)/package.mk
+include $(INCLUDE_DIR)/meson.mk
 
 define Package/libqrtr
   SECTION:=libs
@@ -34,21 +36,12 @@ define Package/qrtr-ns
   TITLE:=qrtr daemon
 endef
 
-define Build/Compile
-	$(call Build/Compile/Default,prefix=/usr all)
-endef
-
-define Build/Install
-	$(call Build/Install/Default,prefix=/usr DESTDIR="$(PKG_INSTALL_DIR)" install)
-endef
-
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/usr/include
 	$(CP) $(PKG_INSTALL_DIR)/usr/include/libqrtr.h $(1)/usr/include/
 	$(INSTALL_DIR) $(1)/usr/lib
 	$(CP) $(PKG_INSTALL_DIR)/usr/lib/* $(1)/usr/lib/
 endef
-
 
 define Package/libqrtr/install
 	$(INSTALL_DIR) $(1)/usr/lib
