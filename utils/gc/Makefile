@@ -35,6 +35,9 @@ define Package/gc/install
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/gc.init $(1)/etc/init.d/gc
 
+	$(INSTALL_DIR) $(1)/etc/init.d
+	$(INSTALL_BIN) ./files/hotplug-gcreboot.init $(1)/etc/init.d/hotplug-gcreboot
+
 	$(INSTALL_DIR) $(1)/etc
 	$(INSTALL_BIN) ./files/hotplug-gcreboot.json $(1)/etc/hotplug-gcreboot.json
 
