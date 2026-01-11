@@ -17,7 +17,7 @@ define Package/$(PKG_NAME)
 	SECTION:=Utilities
 	CATEGORY:=Utilities
 	TITLE:=Defaults Setting For OpenStick
-	DEPENDS:=+gc +android-tools-adbd +rootfs-resizer +PACKAGE_luci:luci-proto-modemmanager
+	DEPENDS:=+gc +android-tools-adbd +rootfs-resizer +qmi-modem-410-init +PACKAGE_luci:luci-proto-modemmanager
 endef
 
 define Build/Configure
