@@ -10,7 +10,7 @@ PKG_LICENSE:=MIT
 include $(INCLUDE_DIR)/package.mk
 
 define Package/qmi-modem-410-init
-  SECTION:=utils
+  SECTION:=Utilities
   CATEGORY:=Utilities
   TITLE:=QMI Modem Initialization Script For 410 Modem Stick
   DEPENDS:=+libqmi
