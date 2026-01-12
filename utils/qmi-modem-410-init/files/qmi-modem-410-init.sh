@@ -89,16 +89,12 @@ main() {
     
     # Stop ModemManager
     log "Stopping ModemManager"
-    if [ -x "/etc/init.d/ModemManager" ]; then
-        /etc/init.d/ModemManager stop 2>/dev/null
-    else
-        systemctl stop ModemManager 2>/dev/null || true
-    fi
+    /etc/init.d/modemmanager stop 2>/dev/null
     
     # Wait for QMI device
     if ! check_qmi_device; then
         log "QMI device not found after maximum retries"
-        /etc/init.d/ModemManager start 2>/dev/null || systemctl start ModemManager 2>/dev/null
+        /etc/init.d/modemmanager start 2>/dev/null
         return 1
     fi
     
@@ -114,11 +110,7 @@ main() {
     
     # Start ModemManager
     log "Starting ModemManager"
-    if [ -x "/etc/init.d/ModemManager" ]; then
-        /etc/init.d/ModemManager start 2>/dev/null
-    else
-        systemctl start ModemManager 2>/dev/null || true
-    fi
+    /etc/init.d/modemmanager start 2>/dev/null
     
     log "QMI modem initialization completed"
     return 0
