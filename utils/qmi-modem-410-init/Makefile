@@ -2,7 +2,7 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=qmi-modem-410-init
 PKG_VERSION:=1.0
-PKG_RELEASE:=2
+PKG_RELEASE:=3
 
 PKG_MAINTAINER:=lkiuyu <lkiuyu@gmail.com>
 PKG_LICENSE:=MIT
