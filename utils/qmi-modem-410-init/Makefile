@@ -31,9 +31,6 @@ define Package/qmi-modem-410-init/install
 	
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/qmi-modem-410-init.init $(1)/etc/init.d/qmi-modem-410-init
-	
-	$(INSTALL_DIR) $(1)/etc/hotplug.d/net
-	$(INSTALL_DATA) ./files/qmi-modem-410-init.hotplug $(1)/etc/hotplug.d/net/99-qmi-modem-410-init
 endef
 
 $(eval $(call BuildPackage,qmi-modem-410-init))
