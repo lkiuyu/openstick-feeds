@@ -108,6 +108,9 @@ main() {
         activate_sim
     fi
     
+    # Set SMS Default Storage
+    echo -e 'AT+CPMS="ME","ME","ME"\r' > /dev/wwan0at1
+    
     # Start ModemManager
     log "Starting ModemManager"
     /etc/init.d/modemmanager start 2>/dev/null
