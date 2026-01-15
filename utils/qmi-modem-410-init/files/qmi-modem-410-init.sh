@@ -47,13 +47,6 @@ activate_sim() {
     
     log "Found Application ID: $APPLICATION_ID"
     
-    # Deactivate current session
-    if qmicli -d /dev/wwan0qmi0 -p --uim-change-provisioning-session='activate=no,session-type=primary-gw-provisioning'; then
-        log "Successfully deactivated current provisioning session"
-    else
-        log "Warning: Failed to deactivate current session"
-    fi
-    
     # Activate new session
     if qmicli -d /dev/wwan0qmi0 -p --uim-change-provisioning-session="slot=1,activate=yes,session-type=primary-gw-provisioning,aid=$APPLICATION_ID"; then
         log "Successfully activated provisioning session with AID: $APPLICATION_ID"
