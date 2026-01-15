@@ -95,14 +95,20 @@ main() {
     if echo "$MODEL" | grep -qE "$ResetEpsApnModelKeyWords"; then
         reset_eps_apn
     fi
+
+    sleep 1
     
     # Activate SIM if needed
     if echo "$MODEL" | grep -qE "$ActiveSimModelKeyWords"; then
         activate_sim
     fi
+
+    sleep 1
     
     # Set SMS Default Storage
     echo -e 'AT+CPMS="ME","ME","ME"\r' > /dev/wwan0at1
+
+    sleep 1
     
     # Start ModemManager
     log "Starting ModemManager"
