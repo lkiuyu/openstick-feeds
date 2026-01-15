@@ -5,15 +5,13 @@ START=99
 STOP=10
 
 USE_PROCD=1
-PROG=/usr/bin/qmi-modem-init
+PROG=/bin/sh -c "sleep 25 && /usr/bin/qmi-modem-init"
 
 start_service() {
     procd_open_instance
     procd_set_param command "$PROG"
     procd_set_param stdout 1
     procd_set_param stderr 1
-    # Delay execution to ensure network is ready
-    procd_set_param start_delay 25
     procd_close_instance
 }
 
