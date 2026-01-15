@@ -1,4 +1,4 @@
-#!/bin/sh /etc/rc.common
+#!/bin/sh
 # QMI Modem Initialization Script
 
 MODEL_FILE="/sys/firmware/devicetree/base/model"
