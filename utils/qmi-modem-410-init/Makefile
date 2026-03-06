@@ -28,9 +28,11 @@ endef
 define Package/qmi-modem-410-init/install
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) ./files/qmi-modem-410-init.sh $(1)/usr/bin/qmi-modem-410-init
+	$(INSTALL_BIN) ./files/qmi_auto_activate.sh $(1)/usr/bin/qmi_auto_activate
 	
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/qmi-modem-410-init.init $(1)/etc/init.d/qmi-modem-410-init
+	$(INSTALL_BIN) ./files/qmi_auto_activate.init $(1)/etc/init.d/qmi_auto_activate
 endef
 
 $(eval $(call BuildPackage,qmi-modem-410-init))
