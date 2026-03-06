@@ -100,9 +100,7 @@ activate_if_sim_missing() {
     fi
 
     echo "激活配置会话成功"
-
-    sleep 2
-
+    
     # 在后台启动 inhibit
     timeout 1 mmcli --inhibit-device="$DEVICE_PATH" || true   # 忽略失败
 
