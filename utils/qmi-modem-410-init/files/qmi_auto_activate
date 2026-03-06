@@ -1,0 +1,29 @@
+#!/bin/sh /etc/rc.common
+
+START=80
+STOP=10
+USE_PROCD=1
+
+# 依赖：确保 qmicli 和 mmcli 已安装（通常由 libqmi-utils 和 modemmanager 提供）
+# 可在开机启动前等待网络就绪（如果需要）
+# boot() 函数会在系统启动时执行 start_service
+
+start_service() {
+    procd_open_instance
+    # 设置要执行的命令（使用完整路径）
+    procd_set_param command /usr/bin/qmi_auto_activate.sh
+    # 自动重启（进程退出后 1 秒重启）
+    procd_set_param respawn
+    # 将 stdout/stderr 记录到 syslog
+    procd_set_param stdout 1
+    procd_set_param stderr 1
+    # 可选：设置运行用户（OpenWrt 默认 root）
+    procd_set_param user root
+    procd_close_instance
+}
+
+# 可选：定义停止服务的行为（procd 会自动处理）
+stop_service() {
+    echo "Stopping qmi_auto_activate monitor"
+    # 可在此添加清理工作（通常不需要）
+}
