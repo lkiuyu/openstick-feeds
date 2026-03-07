@@ -13,7 +13,7 @@ define Package/qmi-modem-410-init
   SECTION:=Utilities
   CATEGORY:=Utilities
   TITLE:=QMI Modem Initialization Script For 410 Modem Stick
-  DEPENDS:=+libqmi
+  DEPENDS:=+libqmi +coreutils-stdbuf +modemmanager
   PKGARCH:=all
 endef
 
